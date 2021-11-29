@@ -32,7 +32,7 @@ let maxColumns = 0;
 // LISTENERS
 
 //window.addEventListener('resize', bbLength);
-submitButton.addEventListener('click', probeWidth);
+submitButton.addEventListener('click', writeIt);
 
 // FUNCTIONS
 
@@ -47,16 +47,20 @@ function bbLength() {
 */
 
 function writeIt() {
-    i = userInput.value;
-    fullColumnsQuantity = Math.floor(i/11);
-    incompleteColumnLines = + (i%11);
-    columnsQuantity = fullColumnsQuantity + Math.ceil(incompleteColumnLines/100);
-    console.log(i);
-    console.log(columnsQuantity);
-    while (i>0){
+    probeWidth();
+    setTimeout(()=>{
+        i = userInput.value;
+        fullColumnsQuantity = Math.floor(i/11);
+        incompleteColumnLines = + (i%11);
+        columnsQuantity = fullColumnsQuantity + Math.ceil(incompleteColumnLines/100);
+        console.log(i);
+        console.log(columnsQuantity);
+        while (i>0){
         blackBoard.innerHTML += `<li class="bartText">${selectedQuote}</li>`;
         i--;
     }
+    },10)
+    
 }
 
 function probeWidth() {
