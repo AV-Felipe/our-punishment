@@ -25,8 +25,7 @@ const lastLinesCounterDisplay = document.getElementById('lastIterationLinesCount
 //console.log(selectedQuote);
 
 // GLOBAL VARIABLES
-
-const selectedQuote = quotes[(quotes.length)-3];
+const selectedQuote = quotes[shuffleQuote()];
 let maxColumns = 0;
 
 // LISTENERS
@@ -84,7 +83,7 @@ function probeWidth() {
     setTimeout(()=>{
         let testElement = document.querySelector('.bartText');
         testElement.style.position = 'absolute';
-        let blackBoardSize = blackBoard.offsetWidth;
+        let blackBoardSize = (blackBoard.offsetWidth) - (2*(parseInt(window.getComputedStyle(blackBoard).paddingLeft)) + 2*(parseInt(window.getComputedStyle(blackBoard).marginLeft)) + 10);
         let testElementSize = testElement.offsetWidth;
         console.log(testElementSize);
         console.log(blackBoardSize);
@@ -109,4 +108,11 @@ function checkInput(){
     }else if(value <= 0){
         userInput.value = 1;
     }
+}
+
+function shuffleQuote() {
+    let x = quotes.length;
+    let y = Math.floor(Math.random() * x);
+    console.log(y);
+    return (y);
 }
