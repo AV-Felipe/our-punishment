@@ -46,11 +46,16 @@ h1 {
     justify-content: flex-start;
     box-sizing: content-box;
     border: 10px solid rgb(163, 99, 16);
+
 }
 @media (max-width: 445px){
     #blackBoard {
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
+}
+
+.bartText {
+    text-align: center;
 }
 
 #angryBart {
