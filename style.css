@@ -9,10 +9,19 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    background-color: darkseagreen;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
 }
 
 @font-face {
@@ -27,14 +36,37 @@ main {
     font-size: 24px;
     width: 80%;
     height: 418px;
-    background-color: green;
+    background-color: darkgreen;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: content-box;
+    border: 10px solid rgb(163, 99, 16);
 }
 @media (max-width: 445px){
     #blackBoard {
         font-size: 5vw;
     }
+}
+
+#angryBart {
+    width: 80px;
+    margin-top: -110px;
+
+}
+
+#erasedDisplay, #lastIterationLinesCount {
+    font-weight: bold;
+}
+
+#feedBack {
+    font-family: 'AtmaHere', cursive;
+    font-size: 18px;
+}
+
+#iterationsQuantity {
+    width: 200px;
 }

@@ -37,11 +37,12 @@
             <ul id="blackBoard">
 
             </ul>
-            <input type="number" id="iterationsQuantity" />
+            <img id ="angryBart" src="assets/images/PinClipart.com_simpsons-1.png" alt="Bart pistola" />
+            <input type="number" id="iterationsQuantity" min="0" max="100000" placeholder="escreva n vezes"/>
             <button type="button" id="submitButton">Escreva!</button>
-            <p>
-                Oquadro foi apagado <span id="erasedDisplay"></span> tendo sido escritas
-                <span id="lastIterationLinesCount"></span> linhas na última lousa.
+            <p id="feedBack">
+                O quadro foi apagado <span id="erasedDisplay"></span> vezes, tendo sido escritas
+                <span id="lastIterationLinesCount"></span> linhas no último bloco da lousa.
             </p>
 
         </main>

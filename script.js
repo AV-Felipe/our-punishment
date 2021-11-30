@@ -34,6 +34,8 @@ let maxColumns = 0;
 //window.addEventListener('resize', bbLength);
 submitButton.addEventListener('click', writeIt);
 
+userInput.addEventListener('focusout', checkInput);
+
 // FUNCTIONS
 
 /*
@@ -98,4 +100,13 @@ function probeWidth() {
         blackBoard.innerHTML = "";
     }, 3);
     
+}
+
+function checkInput(){
+    let value = userInput.value;
+    if(value > 100_000){
+        userInput.value = 100_000;
+    }else if(value <= 0){
+        userInput.value = 1;
+    }
 }
