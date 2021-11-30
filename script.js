@@ -49,16 +49,29 @@ function bbLength() {
 function writeIt() {
     probeWidth();
     setTimeout(()=>{
-        i = userInput.value;
-        fullColumnsQuantity = Math.floor(i/11);
-        incompleteColumnLines = + (i%11);
-        columnsQuantity = fullColumnsQuantity + Math.ceil(incompleteColumnLines/100);
-        console.log(i);
+        iTotal = userInput.value;
+        iColumns = maxColumns * 11;
+        fullColumnsQuantity = Math.floor(iTotal/11);
+        incompleteColumnLines = (iTotal%11 == 0 ? 11 : iTotal%11);
+        lastLinesCounterDisplay.innerHTML = String(incompleteColumnLines);
+        columnsQuantity = (iTotal/11) + Math.ceil(incompleteColumnLines/100);
+        let boardClearingRepetition = (Math.ceil(columnsQuantity / maxColumns) -1);
+        erasedCounterDisplay.innerHTML = String(boardClearingRepetition)
+        console.log(iTotal);
         console.log(columnsQuantity);
-        while (i>0){
-        blackBoard.innerHTML += `<li class="bartText">${selectedQuote}</li>`;
-        i--;
-    }
+        console.log(`lousas não completa ${incompleteColumnLines}`);
+        while (iTotal>0){
+            blackBoard.innerHTML += `<li class="bartText">${selectedQuote}</li>`;
+            iTotal--;
+            if(iColumns > 0){
+                iColumns--;
+            }else{
+                blackBoard.innerHTML = "";
+                iColumns = maxColumns * 11;
+                blackBoard.innerHTML += `<li class="bartText">${selectedQuote}</li>`;
+                iColumns--;
+            }
+        }
     },10)
     
 }
